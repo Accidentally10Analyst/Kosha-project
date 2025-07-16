@@ -1,0 +1,119 @@
+.events-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 3rem 1rem;
+  background: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') no-repeat center center;
+  background-size: cover;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  color: #4b3b2b;
+  font-family: 'Georgia', serif;
+}
+
+.events-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(249, 246, 241, 0.85);
+  border-radius: 12px;
+  z-index: 0;
+}
+
+.events-content {
+  position: relative;
+  z-index: 1;
+}
+
+.events-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.events-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.event-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 350px;
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.event-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover .event-image {
+  transform: scale(1.05);
+}
+
+.event-body {
+  padding: 1rem 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.event-title {
+  font-size: 1.5rem;
+  color: #3e2f1c;
+  margin-bottom: 0.5rem;
+}
+
+.event-description {
+  font-size: 1rem;
+  color: #6b5e4a;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.reserve-btn {
+  align-self: flex-start;
+  background-color: #4b3b2b;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reserve-btn:hover {
+  background-color: #6b5e4a;
+}
+
+@media (max-width: 768px) {
+  .events-grid {
+    flex-direction: column;
+  }
+  .event-card {
+    max-width: 100%;
+  }
+}
